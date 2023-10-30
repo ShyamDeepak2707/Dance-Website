@@ -29,23 +29,26 @@ const Contact = mongoose.model('Contact', contactSchema);
 app.use('/static', express.static('static'));
 app.use(express.urlencoded());
 
-// Pug Specific Configuration
-app.set('view engine', 'pug');
+// htlm Specific Configuration
+app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'templates'));
+app.engine('html', require('ejs').renderFile);
 
 // END POINTS
 app.get('/', (req, res) => {
-    res.status(200).render('home.pug');
+    res.status(200).render('index.html');
 });
 
 app.get('/contact', (req, res) => {
-    res.status(200).render('contact.pug');
+    res.status(200).render('contact.html');
 });
 
 app.post('/contact', (req, res) => {
     var myData = new Contact(req.body);
     myData.save().then(() => {
         res.send("This item was successfully saved");
+    }).then(() => {
+        res.status(200).render('contact.html');
     })
         .catch(() => {
             res.status(400).send('An error occured while saving')

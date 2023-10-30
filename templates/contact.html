@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dance Website</title>
+    <link rel="stylesheet" href="/static/styleContact.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <div id="logo">
+                <img src="/static/img/dancelogo.png" alt="Dance">
+                SDA
+            </div>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="/contact" method="post" class="myForm">
+            <input type="text" name="name" class="myInput" placeholder="Enter your name">
+            <input type="text" name="gender" class="myInput" placeholder="Enter your gender">
+            <input type="tel" name="phone" class="myInput" placeholder="Enter your phone number">
+            <input type="email" name="email" class="myInput" placeholder="Enter your email">
+            <button class="btn">Submit Now</button>
+        </form>
+    </div>
+    <footer id="footer">
+        Copyright &copy 2023 SamuelDanceAcademy.com | All rights reserved
+    </footer>
+</body>
+</html>
