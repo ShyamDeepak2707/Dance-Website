@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
-const port = 80;
+const port = 8000;
 
 
 // Mongoose Configuration
@@ -59,5 +59,5 @@ app.post('/contact', (req, res) => {
 
 // Starting Server
 app.listen(port, () => {
-    console.log(`Your app is running on: http://localhost`);
+    console.log(`Your app is running on: http://localhost:${port}`);
 });
